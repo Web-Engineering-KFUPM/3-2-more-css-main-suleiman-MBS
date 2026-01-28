@@ -1,109 +1,129 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Campus Events Dashboard</title>
-  <!-- TODO 0: Link the styles CSS first. -->
-  <!-- <link rel="stylesheet" href="styles.css" /> -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SocialBook - CSS Styling Practice</title>
+    <link rel="stylesheet" href="styles.css">
+     <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <header class="site-header">
-    <h1>Campus Events Dashboard</h1>
-    <p class="tagline">Discover what’s happening on campus this week.</p>
-  </header>
+    <div id="app">
 
-  <main class="container">
-    <!-- SECTION 1: Featured Event -->
-    <section id="common-properties" class="card">
-      <h2>Featured Event</h2>
-      <p class="lead">Don’t miss the most popular event happening soon.</p>
+        <!-- Header Section -->
+        <header>
+            <h1>SocialBook</h1>
+            <p>A simple social media app - Style it with CSS!</p>
+        </header>
 
-      <div class="color-demo">
-        <p class="color-note">Now open: Spring Club Fair registration</p>
-        <p class="muted">Closes Friday 6:00 PM • Students & organizations welcome</p>
+        <!-- Navigation -->
+        <nav class="navigation">
+            <a href="#feed">Feed</a>
+            <a href="#profile">Profile</a>
+            <a href="#messages">Messages</a>
+            <a href="#contact">Contact</a>
+        </nav>
 
-        <div class="bg-sample">
-          Spring Club Fair — Wed 3:00–6:00 PM • Main Quad
-          <br />
-          Meet student clubs, grab freebies, and sign up on the spot.
-        </div>
+        <!-- News Feed Section -->
+        <section id="feed">
+            <h2>News Feed</h2>
 
-        <span class="inline-label">In-person</span>
-        <div class="inline-label alt">Limited spots</div>
-      </div>
-    </section>
+            <!-- Post 1 -->
 
-    <!-- SECTION 2: Event Details -->
-    <section id="fonts-text" class="card">
-      <h2>Event Details</h2>
-      <article class="copy">
-        <h3 class="title">Guest Talk: Product Design in Real Teams</h3>
-        <p class="intro">
-          Hear from an industry speaker about how design and collaboration work in modern product teams.
-        </p>
-        <p class="sample-text">
-          Location: Building 22, Auditorium A • Time: 1:00–2:30 PM • Seats are first-come, first-served.
-        </p>
-        <a href="#" class="cta-link">See full agenda</a>
-      </article>
-    </section>
+            <div class="post">
+                <h3 class="username">john_doe</h3>
+                <p>Just finished my web development project! 🎉</p>
+                <span class="timestamp">2 hours ago</span>
+            </div>
 
-    <!-- SECTION 3: Quick Stats -->
-    <section id="box-model" class="card">
-      <h2>Quick Stats</h2>
-      <div class="box-row">
-        <div class="box b1">12 Events</div>
-        <div class="box b2">4 Today</div>
-        <div class="box b3">2 Online</div>
-      </div>
-      <p class="hint">Updated daily based on the student activities calendar.</p>
-    </section>
+            <!-- Post 2 - Highlighted/Pinned -->
+            <div class="post highlight">
+                <h3 id="featured-user" class="username">sarah_dev</h3>
+                <p class="blue-text">Check out this amazing CSS tutorial I found!</p>
+                <p class="red-text">Link in my bio 👆</p>
+                <span class="timestamp">5 hours ago</span>
+            </div>
 
-    <!-- SECTION 4: Browse Categories -->
-    <section id="flexbox" class="card">
-      <h2>Browse Categories</h2>
+            <!-- Post 3 -->
+            <div class="post">
+                <h3 class="username">alex_coder</h3>
+                <p>Working late on CSS specificity... when will it end? 😅</p>
+                <span class="timestamp">1 day ago</span>
+            </div>
+        </section>
 
-      <div class="toolbar">
-        <button class="btn">All</button>
-        <button class="btn">Academics</button>
-        <button class="btn">Clubs</button>
-        <button class="btn">Sports</button>
-      </div>
+        <!-- Profile Section -->
+        <section id="profile">
+            <h2>User Profile</h2>
 
-      <div class="product-grid">
-        <div class="item">Workshops</div>
-        <div class="item">Talks</div>
-        <div class="item">Hackathons</div>
-        <div class="item">Volunteering</div>
-        <div class="item">Career</div>
-        <div class="item">Social</div>
-      </div>
-    </section>
+            <div class="profile-card">
+                <h3>CSS Specificity Battle</h3>
+                <p class="winner" id="specificity-test">
+                    This bio text color depends on CSS specificity rules!
+                </p>
+                <p class="follower-count">1,337 followers</p>
+            </div>
 
-    <!-- SECTION 5: Locations & Alerts -->
-    <section id="positioning" class="card">
-      <h2>Locations & Alerts</h2>
-      <div class="position-stage">
-        <div class="static-box">Student Center • Room 210</div>
-        <div class="relative-box">Library • Study Hall B</div>
+            <div class="profile-card">
+                <h3>Bio Override Test</h3>
+                <p class="important-test" style="color: blue;">
+                    This bio has inline style, but will !important override it?
+                </p>
+            </div>
+        </section>
 
-        <div class="absolute-parent">
-          Engineering Building • Lobby
-          <div class="absolute-child">Check-in</div>
-        </div>
+        <!-- Messages Section -->
+        <section id="messages">
+            <h2>Messages</h2>
 
-        <div class="fixed-badge">Live</div>
+            <div class="message-thread">
+                <h3>Chat with Friends</h3>
+                <div class="chat-container">
+                    <p class="message sent">Hey! How's your CSS project going?</p>
+                    <span class="message-time">You - 10:30 AM</span>
+                </div>
+                <div class="chat-container">
+                    <p class="message received">Pretty good! Learning about descendant selectors.</p>
+                    <span class="message-time">Friend - 10:32 AM</span>
+                </div>
+            </div>
 
-        <div class="stack a">Map</div>
-        <div class="stack b">Alert</div>
-      </div>
-      <p class="hint">Tip: Tap a location to view directions and entry notes.</p>
-    </section>
-  </main>
+            <div class="message-thread">
+                <h3>Interactive Elements</h3>
+                <button class="send-button">Send Message</button>
+                <a href="#" class="chat-link">Start New Chat</a>
+            </div>
+        </section>
 
-  <footer class="site-footer">
-    <small>&copy; 2025 Campus Events</small>
-  </footer>
+        <!-- contact form Section -->
+        <section id="contact"> 
+            <form class="contact-container simple-form">
+                <label for="username">Username</label>
+                <input type="text" id="username" placeholder="Enter username">
+
+                <label for="email">Email</label>
+                <input type="text" id="email" placeholder="Enter email">
+
+                <button type="submit">Submit</button>
+            </form>
+        </section>
+
+        <!-- Trending Section -->
+        <section id="trending">
+            <h2>Trending Topics</h2>
+            <h4 class="trending-tag">#WebDevelopment</h4>
+            <h5 class="trending-tag">#CSS</h5>
+            <h6 class="trending-tag">#HTML</h6>
+        </section>
+
+        <!-- Footer -->
+        <footer>
+            <p>&copy; 2024 SocialBook - A CSS Styling Exercise</p>
+        </footer>
+
+    </div>
 </body>
+
 </html>

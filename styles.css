@@ -1,254 +1,297 @@
-/* More CSS.
-   Tip: Use the README for guidance.
-   
-   Important Instructions (Read Before You Start)
+/* SocialBook CSS Styling Practice - Starter File */
+/* Complete the TODOs below to style your social media app */
 
-    This lab contains two types of CSS work:
 
-    1. Some selectors must be written from scratch  
-        -You will create new CSS rules for certain classes or ids that currently have no styles.
+/* TODO 1: Use the <link> tag inside the <head> section to attach styles.css */
 
-    2. Some selectors already have CSS rules defined 
-        -For these, do NOT create a new selector again.  
-        -Instead, add the required properties inside the existing rule.
 
-    What NOT to Do
-    Do not write duplicate selectors like this:
+/* TODO 2: Basic Element Selectors */
+/* Style all paragraphs with color of value #333 and font-size of 16px */
+/* Style all span elements with color of value #888 and font-size of 14px */
+p {
+    color: #333;
+    font-size: 16px;
+}
 
-    /* .card {
-      existing styles (add new style in the exiting selector).
-    } */
+span {
+    color: #888;
+    font-size: 14px;
+}
 
-    /* .card {
-      duplicate selector created again to add new styles.
-    } */
-*/
+/* TODO 3: Class Selectors */
+/* Style usernames with class "username" to have color of value #1877f2 and font-weight as bold */
+/* Style posts with class "blue-text" to have color of value #4267B2 */
+/* Style posts with class "red-text" to have color of value #e74c3c */
+/* Style highlighted posts with class "highlight" to have background-color of value #f0f2f5 and padding of 15px */
 
-/*
-  TODO 0: Link the style sheet using the link tag inside the head tag.
-*/
+.username {
+    color: #1877f2;
+    font-weight: bold;
+}
 
-/* TODO 1:
-  - Define CSS variables on :root for brand colors:
-      1. Define --brand variable and set a color value of #2563eb for primary UI elements
-      2. Define --brand-dark variable and set a darker color value of #1d4ed8 for hover states
-  - Apply a global box-sizing reset using the universal selector (hint use * selector).
-*/
+.blue-text {
+    color: #4267B2;
+}
 
-/* TODO 2:
-   - Give .site-header & .site-footer a subtle background using var(--card)
-   - Make the .tagline class a bit muted (use var(--muted))
-*/
+.red-text {
+    color: #e74c3c;
+}
 
-/* TODO 3:
-   - Set the color to the brand variable and make the text bold for the .color-demo .color-note class.
-   - Set the color to var(--muted) and the font size to 0.95rem for the .color-demo .muted class.
-   - Style the .bg-sample class: Make the width of 100%, set a minimum height of 80px, add padding 0.75 rem and margin-block 0.75 rem, round the corners using border-radius, set the text color to white, and apply a 135-degree linear gradient background starting from the brand color and ending with a green tone like linear-gradient(135deg, var(--brand), #22c55e).
-*/
+.highlight {
+    background-color: #f0f2f5;
+    padding: 15px;
+}
 
-/* TODO 4:
-   - For the .inline-label class: make it behave like an inline-block element with small padding of 0.25rem and 0.5 rem and a border of width 1 px, type as solid line, and set color of value rgba(0, 0, 0, 0.18).
-   - For the .inline-label.alt class: ensure it stays inline with others but use a different border style e.g. dashed.
-*/
 
-/* TODO 5:
-   - For the .copy .title class: choose any font-size (use rem), a font-weight between 600–700,
-     and apply text-transform: capitalize.
-   - For the .copy .intro class: set the font-style to italic and slightly increase the line-height and set the top margin of 0.25 rem.
-*/
+/* TODO 4: ID Selectors */
+/* Style the featured user with id "featured-user" to have color of value #42b883 and font-size of 18px */
+#featured-user {
+    color: #42b883;
+    font-size: 18px;
+}
 
-/* TODO 6:
-   - For the .toolbar class: make it a flex container, distribute items with space-between,
-     align them vertically in the center, and add a gap.
-   - For the .btn class: add padding, remove the default border, and provide hover feedback.
-   - For the .product-grid class: create a responsive flex grid by setting display:flex,
-     wrapping items using flex-wrap as wrap, adding a gap of 0.75rem, and top margin of 0.75rem.
-   - For the .product-grid .item class: Make each item flexible with a flex grow of 1px, flex shrinnk of 1px, and minimum width of 140px, set a minimum height of 90px, apply a soft background and rounded corners, center the content using flexbox, and make the text bold e.g. 700.
-*/
+/* TODO 5: Specificity Battle */
+/* Create multiple rules for the bio with id "specificity-test" and class "winner" */
+/* Rule 1: Use element selector p to make color of value #333 */
 
-/* TODO 7:
-  - .static-box: Add padding (0.5rem 0.75rem), round the corners (10px), apply a light gray background using rgba(0,0,0,0.05), and add bottom margin (0.5rem).
-*/
+/* Rule 2: Use class selector .winner to make color of value #ff6b6b */
 
-/* Base CSS (already provided for you).*/
+/* Rule 3: Use ID selector #specificity-test to make color of value #4ecdc4 */
 
-html,
+/* Rule 4: Use element + class selector p.winner to make color of value #95a5a6 */
+p {
+    color: #333;
+}
+
+.winner {
+    color: #ff6b6b;
+}
+
+#specificity-test {
+    color: #4ecdc4;
+}
+
+p.winner {
+    color: #95a5a6;
+}
+
+/* TODO 6: !important Override */
+/* Use !important to override inline styles for class "important-test" */
+/* Make the color of value #e67e22 !important */
+.important-test {
+    color: #e67e22 !important;
+}
+
+/* TODO 7: Descendant Selectors */
+/* Style messages inside elements with class "chat-container" to have color of value #2c3e50 */
+/* Style input elements inside elements with class "simple-form" to have border of value 1px solid #ccc */
+/* Style message times inside elements with class "chat-container" to have color of value #7f8c8d and font-size of 12px */
+/* Style input elements inside elements with class "simple-form" to have background-color of value #ffffff */
+/* Style input elements inside elements with class "simple-form" to have color of value #333 */
+.chat-container .message {
+    color: #2c3e50;
+}
+
+.simple-form input {
+    border: 1px solid #ccc;
+    background-color: #ffffff;
+    color: #333;
+}
+
+.chat-container .message-time {
+    color: #7f8c8d;
+    font-size: 12px;
+}
+
+/* TODO 8: Pseudo-classes */
+/* Style buttons with class "send-button" on hover to have background-color of value #3b5998 and text color as white */
+/* Style buttons inside elements with class "simple-form" on hover to have background-color of value #145dbf */
+/* Style links with class "chat-link" on hover to have color of value #1877f2 and text-decoration as none */
+.send-button:hover {
+    background-color: #3b5998;
+    color: white;
+}
+
+.simple-form button:hover {
+    background-color: #145dbf;
+}
+
+.chat-link:hover {
+    color: #1877f2;
+    text-decoration: none;
+}
+
+/* TODO 9: Group Selectors */
+/* Style trending tags h4, h5, h6 with class "trending-tag" to have color of value #8b9dc3 and make the font-family Arial */
+h4.trending-tag, h5.trending-tag, h6.trending-tag {
+    color: #8b9dc3;
+    font-family: Arial;
+}
+
+/* Basic Social Media Styling (Already completed for you) */
 body {
-  margin: 0;
-  padding: 0;
-  font-family: system-ui, -apple-system, "Segoe UI", Roboto, Arial, sans-serif;
-  line-height: 1.5;
-  background: var(--bg);
-  color: #111827;
+    font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+    line-height: 1.6;
+    margin: 0;
+    padding: 20px;
+    background-color: #f0f2f5;
+    color: #1c1e21;
 }
 
-:root {
-  --muted: #6b7280;        /* muted text */
-  --bg: #f6f7fb;           /* page background */
-  --card: #ffffff;         /* card/background surfaces */
+#app {
+    max-width: 600px;
+    margin: 0 auto;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    overflow: hidden;
 }
 
-.site-header,
-.site-footer {
-  text-align: center;
-  padding: 1.25rem;
+header {
+    background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+    color: white;
+    text-align: center;
+    padding: 20px;
 }
 
-.container {
-  max-width: 900px;
-  margin: 0 auto;
-  padding: 1rem;
+header h1 {
+    margin: 0 0 10px 0;
+    font-size: 2.5rem;
+    font-weight: 700;
 }
 
-.card {
-  background: var(--card);
-  border: 1px solid rgba(0, 0, 0, 0.06);
-  border-radius: 12px;
-  padding: 1rem 1.25rem;
-  margin-block: 1rem;
+.navigation {
+    background-color: #4267B2;
+    padding: 15px;
+    text-align: center;
 }
 
-.box-row {
-  display: flex;
-  gap: 1rem;
+.navigation a {
+    color: white;
+    text-decoration: none;
+    margin: 0 20px;
+    font-weight: 500;
+    padding: 8px 16px;
+    border-radius: 6px;
+    transition: background-color 0.3s;
 }
 
-.toolbar {
-  padding: 0.5rem;
-  border: 1px dashed rgba(0, 0, 0, 0.1);
+.navigation a:hover {
+    background-color: rgba(255, 255, 255, 0.1);
 }
 
-.position-stage {
-  position: relative;
-  padding: 2rem;
-  min-height: 260px;
-  border: 1px solid rgba(0, 0, 0, 0.08);
-  overflow: hidden;
+section {
+    padding: 20px;
+    border-bottom: 1px solid #e4e6ea;
 }
 
-.card {
-  box-shadow: 0 8px 20px rgba(17, 24, 39, 0.08);
+section:last-of-type {
+    border-bottom: none;
 }
 
-.copy .sample-text {
-  font-family: ui-serif, Georgia, "Times New Roman", Times, serif;
-  font-size: 1.1em;
+.post {
+    background-color: #f8f9fa;
+    border: 1px solid #dadde1;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
 }
 
-.cta-link {
-  text-decoration: none;
-  color: var(--brand);
-  font-weight: 600;
+.post h3 {
+    margin: 0 0 8px 0;
 }
 
-.box {
-  width: 120px;
-  height: 80px;
-  padding: 0.5rem;
-  border: 2px solid rgba(0, 0, 0, 0.18);
-  border-radius: 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 700;
+.post p {
+    margin: 8px 0;
 }
 
-.b1 {
-  background: rgba(37, 99, 235, 0.12);
-  border-color: rgba(37, 99, 235, 0.5);
+.timestamp {
+    color: #65676b;
+    font-size: 13px;
 }
 
-.b2 {
-  background: rgba(34, 197, 94, 0.12);
-  border-color: rgba(34, 197, 94, 0.5);
+.profile-card {
+    background-color: #f8f9fa;
+    border: 1px solid #dadde1;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
 }
 
-.b3 {
-  background: rgba(245, 158, 11, 0.12);
-  border-color: rgba(245, 158, 11, 0.55);
+.message-thread {
+    background-color: #f8f9fa;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
 }
 
-.relative-box {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  background: rgba(37, 99, 235, 0.12);
-  margin-bottom: 0.75rem;
+.chat-container {
+    margin: 10px 0;
+    padding: 8px 0;
 }
 
-.absolute-parent {
-  position: relative;
-  padding: 1rem;
-  border-radius: 12px;
-  background: rgba(34, 197, 94, 0.12);
-  margin-top: 0.5rem;
+.message {
+    margin: 4px 0;
+    padding: 8px 12px;
+    border-radius: 18px;
+    display: inline-block;
+    max-width: 70%;
 }
 
-.relative-box {
-  position: relative;
-  top: 10px;
-  left: 10px;
-  padding: 0.5rem 0.75rem;
-  border-radius: 10px;
-  background: rgba(37, 99, 235, 0.12);
-  margin-bottom: 0.75rem;
+.message.sent {
+    background-color: #0084ff;
+    color: white;
+    float: right;
+    clear: both;
 }
 
-.absolute-parent {
-  position: relative;
-  padding: 1rem;
-  border-radius: 12px;
-  background: rgba(34, 197, 94, 0.12);
-  margin-top: 0.5rem;
+.message.received {
+    background-color: #e4e6ea;
+    color: #1c1e21;
+    float: left;
+    clear: both;
 }
 
-.absolute-child {
-  position: absolute;
-  top: 10px;
-  right: 10px;
-  padding: 0.25rem 0.5rem;
-  border-radius: 10px;
-  background: rgba(0, 0, 0, 0.08);
-  font-weight: 700;
+.message-time {
+    font-size: 11px;
+    color: #65676b;
+    display: block;
+    clear: both;
+    margin-top: 4px;
 }
 
-.fixed-badge {
-  position: fixed;
-  right: 16px;
-  bottom: 16px;
-  padding: 0.35rem 0.6rem;
-  border-radius: 999px;
-  background: rgba(17, 24, 39, 0.85);
-  color: #ffffff;
-  font-size: 0.9rem;
+button {
+    background-color: #42b883;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 6px;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: 600;
+    margin: 5px;
+    transition: background-color 0.3s;
 }
 
-.stack {
-  width: 70px;
-  height: 70px;
-  position: absolute;
-  bottom: 16px;
-  left: 16px;
-  border-radius: 12px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  font-weight: 800;
+button:hover {
+    background-color: #369870;
 }
 
-.stack.a {
-  background: rgba(245, 158, 11, 0.7);
-  z-index: 1;
+.contact-container {
+    background-color: #f8f9fa;
+    border: 1px solid #dadde1;
+    border-radius: 8px;
+    padding: 16px;
+    margin: 16px 0;
 }
 
-.stack.b {
-  background: rgba(37, 99, 235, 0.7);
-  z-index: 2;
-  transform: translate(18px, -18px);
+footer {
+    background-color: #f8f9fa;
+    text-align: center;
+    padding: 20px;
+    color: #65676b;
+    font-size: 14px;
 }
+
+/*Start writing you css code from here*/
+
